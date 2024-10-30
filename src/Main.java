@@ -1,4 +1,4 @@
-public class Main {
+public static class Main {
 
     /**
      * Given two arrays of integers, write a method called combine that combines the two arrays into one larger array.
@@ -7,8 +7,21 @@ public class Main {
      * int[] myArray2 = {2,4,6,8,10,12,14,16};
      * zip(myArray1, myArray2) → {1,3,5,7,9,2,4,6,8,10,12,14,16}
      */
-    public static int[] combine(int[] array1, int[] array2) {
+    public class Array {
 
+        public static int[] combine(int[] array1, int[] array2) {
+
+            int[] result = new int[array1.length + array2.length];
+
+
+            System.arraycopy(array1, 0, result, 0, array1.length);
+
+
+            System.arraycopy(array2, 0, result, array1.length, array2.length);
+
+            return result;
+        }
+    }
         return null;
 
     }
@@ -20,11 +33,25 @@ public class Main {
      * int[] myArray2 = {2,4,6,8,10};
      * zip(myArray1, myArray2) → {1,2,3,4,5,6,7,8,9,10}
      */
-    public static int[] zip(int[] array1, int[] array2) {
+    public static void zip(String[] args) {
+        int[] myArray1 = {1, 3, 5, 7, 9};
+        int[] myArray2 = {2, 4, 6, 8, 10};
+
+        int[] result = zip(myArray1, myArray2);
+
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+
+public static int[] zip(int[] array1, int[] array2) {
+
+    int[] zippedArray;
+
 
         return null;
 
-    }
+
 
     /**
      * Given two arrays of integers of equal length, write a method called product that multiplies each element in the first array by the element at the corresponding index in the second array.
@@ -33,10 +60,29 @@ public class Main {
      * int[] myArray2 = {2,4,6,8,10};=
      * product(myArray1, myArray2) → {2,12,30,56,90}
      */
-    public static int[] product(int[] array1, int[] array2) {
+    class Array { // You can name this class as you like
+        public static void product(String[] args) {
+            int[] myArray1 = {1, 3, 5, 7, 9};
+            int[] myArray2 = {2, 4, 6, 8, 10};
 
-        return null;
+            int[] result = product(myArray1, myArray2);
 
+
+            for (int value : result) {
+                System.out.print(value + " ");
+            }
+        }
+
+        public static int[] product(int[] array1, int[] array2) {
+
+
+            int[] productArray = new int[array1.length];
+
+
+
+
+            return productArray;
+        }
     }
 
     /**
@@ -55,16 +101,46 @@ public class Main {
      * String[] words = {“Christmas”, “IS”, “comInG”, “!”};
      * capitalCount(words) → {1, 2, 2, 0}
      */
-    public static int[] capitalCount(String[] words) {
+    int[] capitalCount1 = capitalCount;
+    public static int[] capitalCount(String[]capitalCount) {
+        public class CapitalLetterCounter {
+             {
+                String[] words = {"Christmas", "IS", "comInG", "!"};
+                int[] result = capitalCount(words);
 
-        return null;
 
+                for (int count : result) {
+                    System.out.print(count + " ");
+                }
+            }
+
+            public static int[] capitalCount(String[] words) {
+                int[] capitalCounts = new int[words.length];
+
+
+                for (int i = 0; i < words.length; i++) {
+                    capitalCounts[i] = countCapitalLetters(words[i]);
+                }
+
+                return capitalCounts;
+            }
+
+            public static int countCapitalLetters(String word) {
+                int count = 0;
+
+
+                for (int i = 0; i < word.length(); i++) {
+                    int ch = word.charAt(i);
+                    if (Character.isUpperCase(ch)) {
+                        count++;
+                    }
+                }
+
+               return count;
+            }
+        }
+    }
     }
 
-    public static int countCapitalLetters(String word) {
-
-        return 0;
-
-    }
-
+public void main() {
 }
